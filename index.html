@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Örneği</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: blanchedalmond;
+        flex-direction: column;
+      }
+
+      .n1 {
+        border: 2px solid #007bff;
+        border-radius: 8px;
+        background-color: #e9f7ff;
+        padding: 10px;
+      }
+      .n1:focus {
+        border-color: #0056b3;
+        box-shadow: none;
+      }
+      .btn {
+        padding: 10px 20px;
+        margin: 5px;
+        border-radius: 5px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: 0.5s;
+      }
+      .machina {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .n2 {
+        margin-right: 1rem;
+      }
+      .result {
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="res" class="result">SONUÇ:</h1>
+    <div class="machina">
+      <input type="number" value="0" id="input1" class="n1 n2" />
+      <input type="number" value="0" id="input2" class="n1" />
+      <button class="btn btn-warning" id="plusBtn">+</button>
+      <button class="btn btn-warning" id="minusBtn">-</button>
+      <button class="btn btn-warning" id="impactBtn">*</button>
+      <button class="btn btn-warning" id="divideBtn">/</button>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      const firstNumber = document.getElementById("input1");
+      const secondNumber = document.getElementById("input2");
+      function setText(sonuc) {
+        const myRes = document.getElementById("res");
+        myRes.innerText = "SONUÇ:" + sonuc;
+      }
+
+      function toplama(num1, num2) {
+        const a = num1 + num2;
+        setText(a);
+      }
+      function cikartma(num1, num2) {
+        const a = num1 - num2;
+        setText(a);
+      }
+      function carpma(num1, num2) {
+        const a = num1 * num2;
+        setText(a);
+      }
+      function bolme(num1, num2) {
+        const a = num1 / num2;
+        setText(a);
+      }
+      const plusBtn = document.getElementById("plusBtn");
+      plusBtn.addEventListener("click", (event) => {
+        toplama(parseFloat(firstNumber.value), parseFloat(secondNumber.value));
+      });
+      const minusBtn = document.getElementById("minusBtn");
+      minusBtn.addEventListener("click", (event) => {
+        cikartma(parseFloat(firstNumber.value), parseFloat(secondNumber.value));
+      });
+      const impactBtn = document.getElementById("impactBtn");
+      impactBtn.addEventListener("click", (event) => {
+        carpma(parseFloat(firstNumber.value), parseFloat(secondNumber.value));
+      });
+      const divideBtn = document.getElementById("divideBtn");
+      divideBtn.addEventListener("click", (event) => {
+        bolme(parseFloat(firstNumber.value), parseFloat(secondNumber.value));
+      });
+    </script>
+  </body>
+</html>
