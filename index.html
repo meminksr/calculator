@@ -71,42 +71,42 @@
     ></script>
 
     <script>
-      const firstNumber = document.getElementById("input1");
-      const secondNumber = document.getElementById("input2");
+      let firstNumber = document.getElementById("input1");
+      let secondNumber = document.getElementById("input2");
       function setText(sonuc) {
-        const myRes = document.getElementById("res");
+        let myRes = document.getElementById("res");
         myRes.innerText = "SONUÇ:" + sonuc;
       }
 
       function toplama(num1, num2) {
-        const a = num1 + num2;
+        let a = num1 + num2;
         setText(a);
       }
       function cikartma(num1, num2) {
-        const a = num1 - num2;
+        let a = num1 - num2;
         setText(a);
       }
       function carpma(num1, num2) {
-        const a = num1 * num2;
+        let a = num1 * num2;
         setText(a);
       }
       function bolme(num1, num2) {
-        const a = num1 / num2;
+        let a = num1 / num2;
         setText(a);
       }
-      const plusBtn = document.getElementById("plusBtn");
+      let plusBtn = document.getElementById("plusBtn");
       plusBtn.addEventListener("click", (event) => {
         toplama(parseFloat(firstNumber.value), parseFloat(secondNumber.value));
       });
-      const minusBtn = document.getElementById("minusBtn");
+      let minusBtn = document.getElementById("minusBtn");
       minusBtn.addEventListener("click", (event) => {
         cikartma(parseFloat(firstNumber.value), parseFloat(secondNumber.value));
       });
-      const impactBtn = document.getElementById("impactBtn");
+      let impactBtn = document.getElementById("impactBtn");
       impactBtn.addEventListener("click", (event) => {
         carpma(parseFloat(firstNumber.value), parseFloat(secondNumber.value));
       });
-      const divideBtn = document.getElementById("divideBtn");
+      let divideBtn = document.getElementById("divideBtn");
       divideBtn.addEventListener("click", (event) => {
         bolme(parseFloat(firstNumber.value), parseFloat(secondNumber.value));
       });
